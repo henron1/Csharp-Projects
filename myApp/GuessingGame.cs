@@ -14,8 +14,17 @@ namespace myApp
 
             while(guess != secretWord)
             {
-                Console.Write("Enter guess for the magic word: ");
-                guess = Console.ReadLine();
+                if (guessCount < guessLimit)
+                {
+                    Console.Write("Enter guess for the magic word: ");
+                    guess = Console.ReadLine();
+                    guessCount++;
+                } 
+                else 
+                {
+                    outOfGuesses = true;
+                }
+                
             }
             Console.Write("You guess correctly!!");
             Console.ReadLine();
