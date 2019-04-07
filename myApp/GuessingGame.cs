@@ -12,7 +12,7 @@ namespace myApp
             int guessLimit = 3;
             bool outOfGuesses = false;
 
-            while(guess != secretWord)
+            while(guess != secretWord && !outOfGuesses)
             {
                 if (guessCount < guessLimit)
                 {
@@ -24,9 +24,18 @@ namespace myApp
                 {
                     outOfGuesses = true;
                 }
-                
             }
-            Console.Write("You guess correctly!!");
+            if(outOfGuesses)
+            {
+                Console.Write("You lose!");
+
+            }
+            else
+            {
+                Console.Write("You guess correctly!!");
+            }
+           
+
             Console.ReadLine();
         }
     }
